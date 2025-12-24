@@ -38,11 +38,11 @@ MAP := \
 	bd41:2017 \
 	bd43:2018
 
-# EXACT ENIGH-STYLE SYMLINK RULE
+# SYMLINK RULE
 ../input/%.zip: ../../download/output/%.zip | ../input
 	@if [ ! -e $@ ]; then ln -sf $< $@; fi
 
-# UNZIP RULE: zip MUST exist, directory MUST be created
+# UNZIP RULE
 $(foreach m,$(MAP),\
 $(eval ../input/$(word 2,$(subst :, ,$(m))): ../input/$(word 1,$(subst :, ,$(m))).zip ;\
 	mkdir -p $$@ ;\
