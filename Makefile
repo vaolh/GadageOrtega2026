@@ -1,2 +1,2 @@
 all:
-	make -C data/bolivia/code
+	make -C data/eh/code
